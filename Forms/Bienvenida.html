@@ -1,0 +1,130 @@
+<!-- <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <!-  PARA MANEJAR Ñ y ACENTOS y RESPONSIVO -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!--  TITULO DEL SITIO -->
+      <title>Corredor KS</title>
+      <script src="../js/jquery.js"></script>
+
+      <!--  INCLUSION DE HEADS CSS y JS -->
+      <script type="text/javascript">
+        function unWrapPlaceholder(){
+         $(this).contents().unwrap();
+       }  $(function(){
+        $("#Heads").load("Templates/Heads.html", unWrapPlaceholder); 
+        $("#BarraSuperior").load("Templates/BarraSuperior.html", unWrapPlaceholder); 
+        $("#BarraLateral").load("Templates/BarraLateral.html", unWrapPlaceholder);
+
+
+      });
+    </script> 
+    <div id="Heads"></div>
+
+  </head>
+
+  <body>
+    <!-- === BARRA SUPERIOR  === -->
+    <!-- === Inclusion de archivo  === -->
+    <div id="BarraSuperior"></div>
+    <!-- === FIN DE BARRA SUPERIOR  === -->
+  </nav>
+  <!-- === INICIO INCLUSION BARRA LATERAL === -->
+  <div class="container-fluid">
+    <div id="wrapper">
+     <div id="BarraLateral"></div>  
+
+     <!-- === FIN  BARRA LATERAL === -->      
+     <br><!--Saltos de Linea-->
+     <br>
+     <br>
+
+
+     <!-- === INICIO CONTENIDO DE LA VENTANA === -->
+     <div id="page-content-wrapper">
+       <div class="container-fluid">
+        <div class="row">
+<form role="form" id="form" data-toggle="validator">
+         <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"></h3>
+          </div>
+          <div class="panel-body">
+          <div class="form-group"  >
+          <IMG SRC="Bienvenidos.png" style="width:95%;height:95%;max-width:900px;max-height:505px;"  >
+          </div>
+
+             
+                 
+               
+
+         </div>
+
+       </div>
+
+ </form>
+       <!-- === PANEL DE TABLA === --> 
+
+  </div>
+
+
+</div>
+<!-- === FIN CONTENIDO DE LA VENTANA === -->
+
+</div>
+<!-- /#wrapper -->
+</div>
+
+<!-- Libreria Jquery de Bootstrap -->
+
+  <script src="../js/bootstrap.js" type="text/javascript"></script>
+
+  <script src="../js/bootbox.js"></script>
+  <!-- jQuery -->
+  <!-- LIBRERIA PADRE -->
+  <script src="../js/jquery.js"></script>
+  <!-- LIBRERIA PADRE -->
+  <script src="../js/jquery.validate.js"></script>
+  <script src="../js/additional-methods.js"></script>
+  <script src="../js/messages_es.js"></script>
+ 
+ 
+
+  <!-- DATATABLE -->
+  <script src="../js/jquery.dataTables.js" type="text/javascript"></script>
+  <!-- Cargar menu de usuario desde JSON -->
+  <script src="../js/bootstrap-treeview.js"></script>
+  <!-- TOGGLE para que el menu superior sea responsivo -->
+     <script>
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+  });
+  </script>
+
+
+  <!-- Script para activar las validaciones -->
+
+  <!-- Script para recargar el datatable automaticamente -->
+  <script src="../js/fnReloadAjax.js"></script>
+     
+      <script src="../js/access.js"></script>
+    <!-- Script para Pantallaes del formulario -->
+  
+  <script src="../js/FormsJS/Bienvenida.js"></script>
+ <!-- Menu Toggle Script -->
+  
+
+  <style>
+.error {
+    color:red;
+}
+.valid {
+    color:green;
+}
+</style>
+</body>
+</html>

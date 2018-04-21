@@ -1,0 +1,232 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  PARA MANEJAR Ñ y ACENTOS y RESPONSIVO -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--  TITULO DEL SITIO -->
+  <title>GAML</title>
+  <script src="../js/jquery.js"></script>
+
+  <!--  INCLUSION DE HEADS CSS y JS -->
+  <script type="text/javascript">
+    function unWrapPlaceholder(){
+     $(this).contents().unwrap();
+   }  $(function(){
+    $("#Heads").load("Templates/Heads.html", unWrapPlaceholder); 
+    $("#BarraSuperior").load("Templates/BarraSuperior.html", unWrapPlaceholder); 
+    $("#BarraLateral").load("Templates/BarraLateral.html", unWrapPlaceholder);
+
+
+  });
+</script> 
+<div id="Heads"></div>
+
+</head>
+
+<body>
+  <!-- === BARRA SUPERIOR  === -->
+ <!-- === Inclusion de archivo  === -->
+  <div id="BarraSuperior"></div>
+  <!-- === FIN DE BARRA SUPERIOR  === -->
+</nav>
+
+
+<!-- === INICIO INCLUSION BARRA LATERAL === -->
+<div class="container-fluid">
+  <div id="wrapper">
+   <div id="BarraLateral"></div>  
+
+   <!-- === FIN  BARRA LATERAL === -->      
+   <br><!--Saltos de Linea-->
+   <br>
+   <br>
+   <!-- === INICIO CONTENIDO DE LA VENTANA === -->
+   <div id="page-content-wrapper">
+     <div class="container-fluid">
+      <div class="row">
+<form role="form" id="form" data-toggle="validator">
+        <!-- === INICIO PANEL DE EDICIÓN === -->   
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Gestión de Solicitud Insumo</h3>
+          </div>
+          <div class="panel-body">
+            En este panel podrá agregar las Solicitudes de Insumos en el sistema.
+
+
+             <!-- === INPUTS TXT === -->  
+
+             <div class="form-group">
+  <div style="width:50%; float:left;">
+ </br>
+  </br>
+                <div class="form-group">
+              <label for="ejemplo_text_1">Cédula del Empleado</label>
+              <input class="form-control" type="text" name="Cedula" id="txtCedulaEmpleado"  placeholder="Cédula del Empleado"/>
+              </div>
+       
+                  <button type="button" class="btn btn-info btn-sm" id="BuscarCedulaEmpleado" onclick="BuscarCedulaPorEmpleado();">Buscar</button>
+      </br>
+      </br>
+      
+              <label for="ejemplo_text_1">Nombre</label>
+      <input type="text" class="form-control" id="txtNombre" name="Nombre"
+           placeholder="Nombre del Empleado" value="" readonly/>
+</br>
+            <label for="ejemplo_text_1">Apellido</label>
+      <input type="text" class="form-control" id="txtApellido" name="Apellido"
+           placeholder="Apellido del Empleado" readonly/>
+</br>
+             </div>
+  </div>
+             <label for="ejemplo_text_1">Descripción</label>
+              <textarea type="text" class="form-control" name="Descripcion" id="txtDescripcion" placeholder="Descripción del Espacio Físico "></textarea>
+
+              </br>
+            <label for="ejemplo_text_1">Fecha de Solicitud</label>
+    <input type="text" class="form-control" id="txtFechaSolicitud"
+               placeholder="Fecha" name="Fecha" readonly>
+      </br>
+ <label for="ejemplo_text_1">Tipo de Solicitud</label><select class="form-control" id="cmbTipoSolicitud">
+<option >Productos de Limpieza</option>
+<option >Materiales de Reparación</option>
+<!--<option >Tenedor u Horquilla</option>
+<option >Plato</option>
+<option >Para Vehículos Pesados</option>-->
+
+</select>
+
+
+
+            <label for="ejemplo_text_1"></label>
+                          <div class="form-group">
+              <label for="ejemplo_text_1">Estatus</label>
+              <input class="form-control" type="text" name="Estatus" id="txtEstatus" readonly placeholder="Estatus"/>
+              </div>
+                 
+                <label for="ejemplo_text_1"></label>
+              <input class="form-control" type="text"  style="visibility:collapse" name="Idn" id="txtIdn"/>
+
+         </div>
+
+        </div>
+       </div>
+ 
+
+        <div class="panel panel-primary">
+         <div class="panel-body">
+           <p>
+          <!-- === BOTONES === -->  
+             <button type="submit" id="Guardar" class="btn btn-lg btn-success">Guardar</button>
+        <button type="submit" id="Modificar" class="btn btn-lg btn-warning">Modificar</button>
+        <button type="submit" id="Eliminar" class="btn btn-lg btn-danger">Eliminar</button>
+                   <button type="submit" id="Reactivar" class="btn btn-lg btn-primary">Reactivar</button>
+         <button type="button" class="btn btn-lg btn-info" onclick="LimpiarCampos();">Limpiar</button>   
+               <button type="button" class="btn btn-lg btn-default" onclick="ConfirmSalir();">Salir</button>
+             <!-- === FIN BOTONES === -->  
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- === FIN CONTENIDO DE LA VENTANA === -->
+  </form>
+  <!-- === PANEL DE TABLA === --> 
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Lista de Solicitudes de Insumos</h3>
+    </div>
+    <div class="panel-body">
+      Puede visualizar las Solicitudes de Insumos actualmente almacenadas en el sistema
+
+      <!-- ====== DATATABLE ======= -->
+      <table id="TablaSolicitudInsumo" class="display" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Empleado</th>
+            <th>Descripción</th>
+            <th>Fecha Solicitud</th>
+            <th>Tipo Solicitud</th>
+            <th>Estatus</th>
+                 
+              </tr>
+          </thead>
+        <tfoot>
+          <tr>
+            <th>Código</th>
+            <th>Empleado</th>
+            <th>Descripción</th>
+            <th>Fecha Solicitud</th>
+            <th>Tipo Solicitud</th>
+            <th>Estatus</th>                 
+               </tr>
+          </tfoot>
+      </table>
+      <tbody>
+
+      </tbody>
+
+    </table>
+    <!-- ====== FIN DATATABLE======= -->
+  </div>
+</div>
+</div>
+<!-- === FIN CONTENIDO DE LA VENTANA === -->
+
+</div>
+<!-- /#wrapper -->
+</div>
+
+<!-- Libreria Jquery de Bootstrap -->
+
+  <script src="../js/bootstrap.js" type="text/javascript"></script>
+
+  <script src="../js/bootbox.js"></script>
+  <!-- jQuery -->
+  <!-- LIBRERIA PADRE -->
+  <script src="../js/jquery.js"></script>
+  <!-- LIBRERIA PADRE -->
+  <script src="../js/jquery.validate.js"></script>
+  <script src="../js/additional-methods.js"></script>
+  <script src="../js/messages_es.js"></script>
+ 
+ 
+
+  <!-- DATATABLE -->
+  <script src="../js/jquery.dataTables.js" type="text/javascript"></script>
+  <!-- Cargar menu de usuario desde JSON -->
+  <script src="../js/bootstrap-treeview.js"></script>
+  <!-- TOGGLE para que el menu superior sea responsivo -->
+     <script>
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+  });
+  </script>
+
+
+  <!-- Script para activar las validaciones -->
+
+  <!-- Script para recargar el datatable automaticamente -->
+  <script src="../js/fnReloadAjax.js"></script>
+     <!-- <script src="../js/access.js"></script>-->
+    <!-- Script para funciones del formulario -->
+  <script src="../js/FormsJS/SolicitudInsumo.js"></script>
+  <script src="../js/bootstrap-datepicker.js"></script>
+   <script src="../js/bootstrap-datapicker.es.js" charset="UTF-8"></script>
+ <!-- Menu Toggle Script -->
+  
+
+  <style>
+.error {
+    color:red;
+}
+.valid {
+    color:green;
+}
+</style>
+</body>
+</html>

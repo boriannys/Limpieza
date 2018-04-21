@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  PARA MANEJAR Ñ y ACENTOS y RESPONSIVO -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--  TITULO DEL SITIO -->
+  <title>Corredor KS</title>
+  <script src="../js/jquery.js"></script>
+
+
+
+  <!--  INCLUSION DE HEADS CSS y JS -->
+  <script type="text/javascript">
+    function unWrapPlaceholder(){
+     $(this).contents().unwrap();
+   }  $(function(){
+    $("#Heads").load("Templates/Heads.html", unWrapPlaceholder); 
+    $("#BarraSuperior").load("Templates/BarraSuperior.html", unWrapPlaceholder); 
+    $("#BarraLateral").load("Templates/BarraLateral.html", unWrapPlaceholder);
+
+
+  });
+</script> 
+<link href="../css/login.css" rel="stylesheet">
+
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">BIENVENIDO A BANSEGURO2000 </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">  
+         <li><a href="#" onclick="AbrirModalRegistro();">Registrarse</a></li>
+         <li class="dropdown">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Acceder</b> <span class="caret"></span></a>
+
+           <ul id="login-dp" class="dropdown-menu">
+            <li>
+             <div class="row">
+              <div class="col-md-12">
+
+                <form role="form" id="form" data-toggle="validator">
+                 <div class="form-group">
+                   <img id="logobs" src="../img/Circular.png" style="width:160px;">
+                 </div>
+
+                 <div class="form-group">
+                   <label class="sr-only" for="exampleInputEmail2">Nombre de Usuario</label>
+                   <input type="text" name="user" class="form-control" id="txtUser" placeholder="Nombre de Usuario">
+                 </div>
+                 <div class="form-group">
+                   <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
+                   <input type="password" name="password" class="form-control" id="txtPassword" placeholder="Contraseña">
+                 </div>
+                 <div id="id-error" style="color:red;">
+                  <label for="name" class="error" generated="true" ></label>
+                  <div class="form-group">
+                   <button type="submit" id="btnLogin" class="btn btn-primary btn-block" id="Logi" >Entrar</button>
+                 </div>
+
+
+                 <div class="form-group">
+                   <button type="submit" id="btnRegistro" class="btn btn-primary btn-block" >Registrate</button>
+                 </div>
+
+
+               </form>
+             </div>
+
+           </div>
+         </li>
+       </ul>
+     </li>
+   </ul>
+ </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+
+
+
+<div id="Heads"></div>
+<body>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <img src="../img/Bienvenido.jpg" alt="Chania" width="1293" height="444">
+           <!-- <div class="carousel-caption">
+              <h3>Chania</h3>
+              <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+            </div>-->
+          </div>
+
+          <div class="item">
+            <img src="../img/Multiplataforma.jpg" alt="Chania" width="1293" height="444">
+            <!-- <div class="carousel-caption">
+              <h3>Chania</h3>
+              <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+            </div>-->
+          </div>
+
+          <div class="item">
+            <img src="../img/NuevasFunciones.jpg" alt="Flower" width="1293" height="444">
+            <!-- <div class="carousel-caption">
+              <h3>Chania</h3>
+              <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+            </div>-->
+          </div>
+
+
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+
+        </a>
+      </div>
+
+
+      <div class="center-block">
+
+        <div class="form-group">
+          <h5 style="color:#fff; margin-left:35%;margin-right:35%;">Sígue a Banseguro2000 en las redes sociales </h5>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Facebook</button>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-warning btn-block">Instagram</button>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <button type="submit" class="btn btn-info btn-block">Twitter</button>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block">Página Web</button>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+</div>
+ <!-- MODAL!!!!!!!!!! -->
+      <div class="modal fade" id="ModalAgregarUsuario" role="dialog" >
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="submit" id="AgregarUsuario"  class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title" Id="LabelUsuario">REGISTRARSE COMO USUARIO</h4>
+              <div class="panel-heading">
+
+              </div>
+
+            </div>
+            <!--Aqui coloca las cajas del modal-->
+            <div class="modal-body">
+             <form role="form" id="formModalUsuario" >
+            <p>A continuación podrás registrarte en el sistema, colocando todos tus datos, posteriormente el administrador validará tus credenciales y te asignara un rol para poder acceder al sistema</p>
+              <div style="width:48%; float:left;padding:10px;">
+                 <div class="form-group">
+                  <label for="ejemplo_text_1">Nombre de Usuario</label>
+                  <input type="text" class="form-control" id="txtUserRegistro" 
+                  placeholder="Para acceder al sistema"  name="NombreUsuarioRegistro" />
+                
+                </div>
+
+
+                <div class="form-group">
+                  <label for="ejemplo_text_1">Contraseña</label>
+                  <input type="password" class="form-control" id="txtPasswordRegistro" 
+                  placeholder="Para acceder al sistema"  name="PasswordRegistro"/>
+                  
+                </div>
+
+                <div class="form-group">
+                  <label for="ejemplo_text_1">Confirmar Contraseña</label>
+                  <input type="password" class="form-control" name="Password2Registro" id="txtPassword2Registro" 
+                  placeholder="Contraseña">
+                 
+                </div>
+
+          
+              <div class="form-group">
+              <label for="ejemplo_text_1">Pregunta Secreta</label>
+              <input type="text" class="form-control" id="txtPreguntaSecretaRegistro" name="PreguntaSecretaRegistro"
+              placeholder="Para recuperar tu cuenta ">
+              </div>
+
+              <div class="form-group">
+                <label for="ejemplo_text_1">Respuesta </label>
+                <input type="password" class="form-control" id="txtRespuestaRegistro" 
+                placeholder="Para recuperar tu cuenta" name="RespuestaRegistro" >
+               
+              </div>
+
+              <div class="form-group">
+                <label for="ejemplo_text_1">Cedula o Rif</label>
+                <input type="text" class="form-control" id="txtCedulaRifRegistro" 
+                placeholder="Tu identificación"  name="CedulaRifRegistro"  
+               />
+              
+              </div>
+                  <div class="form-group">
+              <label for="ejemplo_text_1">Email</label>
+              <input type="text" class="form-control" id="txtEmailRegistro" name="EmailRegistro"
+              placeholder="Correo electrónico">
+              </div>
+          </div>
+         <div style="width:48%; float:right;padding:20px;">
+           
+              <div class="form-group">
+                <label for="ejemplo_text_1">Nombre</label>
+                <input type="text" class="form-control" id="txtNombreRegistro" 
+                placeholder="Nombre real" name="NombreRegistro">
+             
+              </div>
+
+              <div class="form-group">
+                <label for="ejemplo_text_1">Apellido</label>
+                <input type="text" class="form-control" id="txtApellidoRegistro" 
+                placeholder="Apellido real" name="ApellidoRegistro">
+              
+              </div>
+
+              <div class="form-group">
+              <label for="ejemplo_text_1">Sexo</label><select class="form-control"  name="SexoRegistro" id="cmbSexoRegistro">
+              <option  value ="M" >Masculino</option>
+              <option value ="F" >Femenino</option>
+              </select>
+              </div>
+
+         <div class="form-inline">
+              <label for="ejemplo_text_1">Teléfono</label>
+               </br>
+                <select class="form-control" id="cmbCodigoArea">
+                <option value ="0414">0414</option>
+                <option value ="0424">0424</option>
+                <option value ="0416">0416</option>
+                <option value ="0426">0426</option>
+                <option value ="0412">0412</option></select>
+               
+                <!--<div class="form-group">-->
+               
+                <input type="text" class="form-control"  name="TelefonoRegistro" id="txtTelefonoRegistro" 
+           placeholder="Indica tu teléfono móvil"/>
+         
+           </div>
+           
+
+          <div class="form-group">
+          <label for="ejemplo_text_1">Estado</label><select class="form-control" id="cmbEstadoRegistro"></select>
+           </div>
+
+           <div class="form-group">
+            <label for="ejemplo_text_1">Municipio</label><select class="form-control" id="cmbMunicipioRegistro"></select> 
+             </div>
+
+            <div class="form-group">
+             <label for="ejemplo_text_1">Parroquia</label><select class="form-control" id="cmbParroquiaRegistro"></select> 
+            </div>
+          
+           <div class="form-group">
+           <label for="ejemplo_text_1"></label>
+           <input class="form-control" type="text" style="visibility:collapse" name="Idn" id="txtIdnRegistro"/>
+          </div>
+
+             <div id="id-error" style="color:red;">
+                  <label for="name" class="error" generated="true" ></label>
+              </div>
+               <button type="submit" class="btn btn-info" id="btnAgregarUsuarioNuevo">Registrarse</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+         </form>
+      
+       </div>
+      </div>
+     </form>
+
+  
+
+</div>
+</div>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.validate.js"></script>
+<script src="../js/additional-methods.js"></script>
+<script src="../js/messages_es.js"></script>
+<script src="../js/bootstrap.js" type="text/javascript"></script>
+<script src="../js/bootbox.js"></script>
+
+
+<!-- DATATABLE -->
+<script src="../js/jquery.dataTables.js" type="text/javascript"></script>
+<!-- Cargar menu de usuario desde JSON -->
+<script src="../js/bootstrap-treeview.js"></script>
+<!-- TOGGLE para que el menu superior sea responsivo -->
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>
+
+
+<!-- Script para activar las validaciones -->
+
+<!-- Script para recargar el datatable automaticamente -->
+<script src="../js/fnReloadAjax.js"></script>
+      <script src="../js/access.js"></script>
+<!-- Script para Pantallaes del formulario -->
+<script src="../js/FormsJS/login.js"></script>
+<!-- Menu Toggle Script -->
+
+
+<style>
+  .error {
+    color:red;
+  }
+  .valid {
+    color:green;
+  }
+  #ModalAgregarUsuario { overflow-y:scroll }
+</style>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!--  PARA MANEJAR Ñ y ACENTOS y RESPONSIVO -->
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  TITULO DEL SITIO -->
+      <title>Corredor KS</title>
+       <script src="../js/jquery.js"></script>
+     
+
+   <!--  INCLUSION DE HEADS CSS y JS -->
+      <script type="text/javascript">
+          function unWrapPlaceholder(){
+     $(this).contents().unwrap();
+   }  $(function(){
+      $("#Heads").load("Templates/Heads.html", unWrapPlaceholder); 
+      $("#BarraSuperior").load("Templates/BarraSuperior.html", unWrapPlaceholder); 
+      $("#BarraLateral").load("Templates/BarraLateral.html", unWrapPlaceholder);
+     
+     
+    });
+    </script> 
+<div id="Heads"></div>
+   
+  </head>
+
+    <body>
+  <!-- === BARRA SUPERIOR  === -->
+  
+   <!-- === BARRA SUPERIOR  === -->
+  <!-- === Inclusion de archivo  === -->
+  <div id="BarraSuperior"></div>
+  <!-- === FIN DE BARRA SUPERIOR  === -->
+  </nav>
+
+
+  <!-- === INICIO INCLUSION BARRA LATERAL === -->
+ <div class="container-fluid">
+      <div id="wrapper">
+   <div id="BarraLateral"></div>  
+
+   <!-- === FIN  BARRA LATERAL === -->      
+<br><!--Saltos de Linea-->
+<br>
+<br>
+ <!-- === INICIO CONTENIDO DE LA VENTANA === -->
+<div id="page-content-wrapper">
+ <div class="container-fluid">
+    <div class="row">
+
+      <form role="form" id="form" data-toggle="validator">
+      <!-- === INICIO PANEL DE EDICIÓN === -->   
+     <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Listado de Polizas por Fechas</h3>
+            </div>
+            <div class="panel-body">
+              En este panel podrá consultar las polizas por fechas de Emision, Inicio, Registro y Vencimiento.
+           
+         
+    
+<!--<form role="form" id="ColorForm">-->
+ <!-- === INPUTS TXT === --> 
+ <div class="form-group">
+  <div style="width:100%; float:left;">
+  
+           
+    <label for="ejemplo_text_1">Fecha Inicio</label>
+    <input type="text" class="form-control" id="txtFecha1" placeholder="Fecha Inicio" name="Fecha1">
+ </br>   
+
+
+  <label for="ejemplo_text_1">Fecha Fin</label>
+    <input type="text" class="form-control" id="txtFecha2" placeholder="Fecha Fin" name="Fecha2">
+
+    </br> 
+
+
+
+
+    <!-- === BOTONES === -->  
+
+ <label for="ejemplo_text_1">Buscar el listado de pólizas según la fecha de:</label>
+ </br>
+   <button type="button" class="btn btn-info btn-sm" id="TablaFechaEmision" onclick="CompararFechas();">Emisión</button>
+
+   <button type="button" class="btn btn-info btn-sm" id="TablaFechaInicio" onclick="CargarTablaPorFechasInicio();">Inicio</button>
+ 
+   <button type="button" class="btn btn-info btn-sm" id="TablaFechaRegistro" onclick="CargarTablaPorFechasRegistro();">Registro</button>
+
+   <button type="button" class="btn btn-info btn-sm" id="TablaFechaRegistro" onclick="CargarTablaPorFechasVencimiento();">Vencimiento</button>
+
+
+
+
+          <!--  <button type="submit" id="Emision" class="btn btn-lg btn-warning">Emisión</button>
+            <button type="submit" id="Inicio" class="btn btn-lg btn-info">Inicio</button>
+            <button type="submit" id="Registro" class="btn btn-lg btn-info">Registro</button>
+            <button type="submit" id="Vencimiento" class="btn btn-lg btn-info">Vencimiento</button>
+            <button type="button" class="btn btn-lg btn-info" onclick="ConfirmSalir();">Salir</button>-->
+          
+           
+      
+         <!-- <div id="id-error" style="color:red;">
+              <label for="name" class="error" generated="true" ></label>
+          </div>
+      <!--</br>-->
+      <!--</br>-->
+      <!--<button type="submit" class="btn btn-default" onclick="GuardarColor();">Aceptar</button>-->
+  
+   <!-- <label for="ejemplo_text_1"></label>
+                          <div class="form-group">
+              <label for="ejemplo_text_1">Estatus</label>
+              <input class="form-control" type="text" name="Estatus" id="txtEstatus" readonly placeholder="Estatus"/>
+              </div>
+                 
+                <label for="ejemplo_text_1"></label>
+              <input class="form-control" type="text"  style="visibility:collapse" name="Idn" id="txtIdn"/>-->
+
+   </div>   
+</div>
+   </div>
+   </div>
+</form>
+
+ <!--<div class="form-group">
+  <div style="width:50%; float:left;">-->
+
+    
+
+<!--</div>
+  </div>
+  </div>
+
+                </div>
+                 <div class="panel panel-primary">
+                 <div class="panel-body">
+             <p>
+ 
+<!-- === BOTONES === -->  
+          <!--  <button type="submit" id="Guardar" class="btn btn-lg btn-success">Guardar</button>
+            <button type="submit" id="Modificar" class="btn btn-lg btn-warning">Modificar</button>
+            <button type="submit" id="Eliminar" class="btn btn-lg btn-danger">Eliminar</button>
+                   <button type="submit" id="Reactivar" class="btn btn-lg btn-primary">Reactivar</button>
+            <button type="button" class="btn btn-lg btn-info" onclick="ConfirmSalir();">Salir</button>
+          </p>
+        </div>
+      </div>
+    </div> -->
+        <!-- === FIN CONTENIDO DE LA VENTANA === -->
+
+<!-- === PANEL DE TABLA === --> 
+  <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Listado de Pólizas por Fechas de Emisión</h3>
+              </div>
+        <div class="panel-body">
+                Puede visualizar los Pólizas por Fechas actualmente almacenadas en el sistema
+             
+                  <!-- ====== DATATABLE ======= -->
+   <table id="TablaPolizaPorFecha" class="display" cellspacing="0" width="100%">
+          <thead>
+              <tr>
+                  <th>Código</th>
+                  <th>Código Poliza</th>
+                  <th>Cédula Cliente</th>
+                  <th>Nombre Cliente</th>
+                  <th>Apellido Cliente</th>
+                  <th>Cédula Analista</th>
+                  <th>Nombre Analista</th>
+                  <th>Nombre Aseguradora</th>
+                  <th>Cédula Relacionado</th>
+                  <th>Nombre Relacionado</th>
+                  <th>Apellido Relacionado</th>
+                  <th>Nombre Producto</th>
+                  <th>Cédula/Rif Productor</th>
+                  <th>Nombre Productor</th>
+                  <th>Nombre Moneda</th>
+                  <th>Tipo Poliza</th>
+                  <th>Tipo Pago</th>
+                  <th>Estatus Poliza</th>
+                  <th>Comisión</th>
+                  <th>Fecha Emisión</th>
+                  <th>Fecha Inicio</th>
+                  <th>Fecha Registro</th>
+                  <th>Fecha Vencimiento</th>
+                  <th>Observación</th>
+                  <th>Deducible</th>
+                  <th>Suma Asegurada</th>
+                  <th>Prima Asegurada</th>
+              </tr>
+           <th>Estatus</th>
+                 
+              </tr>
+          </thead>
+          <tfoot>
+              <tr>
+                   <th>Código</th>
+                  <th>Código Poliza</th>
+                  <th>Cédula Cliente</th>
+                  <th>Nombre Cliente</th>
+                  <th>Apellido Cliente</th>
+                  <th>Cédula Analista</th>
+                  <th>Nombre Analista</th>
+                  <th>Nombre Aseguradora</th>
+                  <th>Cédula Relacionado</th>
+                  <th>Nombre Relacionado</th>
+                  <th>Apellido Relacionado</th>
+                  <th>Nombre Producto</th>
+                  <th>Cédula/Rif Productor</th>
+                  <th>Nombre Productor</th>
+                  <th>Nombre Moneda</th>
+                  <th>Tipo Poliza</th>
+                  <th>Tipo Pago</th>
+                  <th>Estatus Poliza</th>
+                  <th>Comisión</th>
+                  <th>Fecha Emisión</th>
+                  <th>Fecha Inicio</th>
+                  <th>Fecha Registro</th>
+                  <th>Fecha Vencimiento</th>
+                  <th>Observación</th>
+                  <th>Deducible</th>
+                  <th>Suma Asegurada</th>
+                  <th>Prima Asegurada</th>
+                
+                 
+               <th>Estatus</th>                 
+                         
+               </tr>
+          </tfoot>
+      </table>
+       <tbody>
+
+  </tbody>
+</table>
+      <!--</table>-->
+      <!-- ====== FIN DATATABLE======= -->
+        </div>
+          </div>
+           </div>
+          <!-- === FIN CONTENIDO DE LA VENTANA === -->
+
+      </div>
+    
+      <!-- /#wrapper -->
+      </div>
+
+<!-- Libreria Jquery de Bootstrap -->
+
+  <script src="../js/bootstrap.js" type="text/javascript"></script>
+
+  <script src="../js/bootbox.js"></script>
+  <!-- jQuery -->
+  <!-- LIBRERIA PADRE -->
+  <script src="../js/jquery.js"></script>
+  <!-- LIBRERIA PADRE -->
+  <script src="../js/jquery.validate.js"></script>
+  <script src="../js/additional-methods.js"></script>
+  <script src="../js/bootstrap-methods.js"></script>
+ <script src="../js/messages_es.js"></script>
+ 
+
+  <!-- DATATABLE -->
+  <script src="../js/jquery.dataTables.js" type="text/javascript"></script>
+  <!-- Cargar menu de usuario desde JSON -->
+  <script src="../js/bootstrap-treeview.js"></script>
+  <!-- TOGGLE para que el menu superior sea responsivo -->
+     <script>
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+  });
+  </script>
+
+
+  <script src="../js/fnReloadAjax.js"></script>
+      <script src="../js/access.js"></script>
+    <!-- Script para TipoPagoes del formulario -->
+  <script src="../js/FormsJS/ListadoPolizasPorFechas.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+   <script src="../js/bootstrap-datapicker.es.js" charset="UTF-8"></script>
+
+<!-- Script para recargar el datatable automaticamente -->
+
+  <!-- Script para activar las validaciones -->
+
+  <!-- Script para recargar el datatable automaticamente -->
+
+ <!-- Menu Toggle Script -->
+  
+
+  <style>
+.error {
+    color:red;
+}
+.valid {
+    color:green;
+}
+</style>
+ 
+  </body>
+</html>

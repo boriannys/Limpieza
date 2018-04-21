@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!--  PARA MANEJAR Ñ y ACENTOS y RESPONSIVO -->
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+     <!--  TITULO DEL SITIO -->
+      <title>Corredor KS</title>
+       <script src="../js/jquery.js"></script>
+
+   <!--  INCLUSION DE HEADS CSS y JS -->
+      <script type="text/javascript">
+          function unWrapPlaceholder(){
+     $(this).contents().unwrap();
+   }  $(function(){
+      $("#Heads").load("Templates/Heads.html", unWrapPlaceholder); 
+      $("#BarraSuperior").load("Templates/BarraSuperior.html", unWrapPlaceholder); 
+      $("#BarraLateral").load("Templates/BarraLateral.html", unWrapPlaceholder);
+     
+     
+    });
+    </script> 
+<div id="Heads"></div>
+        <link rel="stylesheet" href="../css/style.css">
+
+    
+    
+    
+  </head>
+  <!-- === BARRA SUPERIOR  === -->
+  <!-- === Inclusion de archivo  === -->
+  <div id="BarraSuperior"></div>
+  <!-- === FIN DE BARRA SUPERIOR  === -->
+  </nav>
+  <body>
+ 
+    <div class="login-form">
+     <h1>welcome</h1>
+     <div class="form-group ">
+       <input type="text" class="form-control" placeholder="Usuario " id="UserName">
+       <i class="fa fa-user"></i>
+     </div>
+     <div class="form-group log-status">
+       <input type="password" class="form-control" placeholder="Contraseña" id="Passwod">
+       <i class="fa fa-lock"></i>
+     </div>
+      <span class="alert">Datos incorrectos</span>
+      <a class="link" href="#">Perdiste tu contraseña?</a>
+     <button type="button" class="log-btn" >Acceder</button>
+     
+    
+   </div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="../js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

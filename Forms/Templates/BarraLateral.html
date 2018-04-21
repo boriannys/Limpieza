@@ -1,0 +1,155 @@
+ <div class="container-fluid">
+      <div id="wrapper">
+
+<div class="container-fluid">
+ <div id="wrapper">
+
+
+        <!-- SIDERBAR CON ARBOL QUE SE CARGA POR JSON -->
+      <div id="sidebar-wrapper">
+         
+        <!--  <div id="treeview" style="width:250px;margin-top:30%;">
+          </div>-->
+             <script>
+    $(document).ready(function() {
+  
+    //Al iniciar la ventana, se obtiene el token de parametro
+    window.token = getUrlParameter("token");
+    //Se envia un post para comprobar el token
+    ComprobarAutorizacionTree(token);
+
+    //METODO PARA AGREGAR TOKENS A TODOS LOS LINKS
+   
+     $("a.GestionAlmacen").attr("href", 'Almacen.html?token='+ $.trim(token)+'');
+    $("a.GestionInsumo").attr("href", 'Insumo.html?token='+ $.trim(token)+'');
+    $("a.GestionRol").attr("href", 'Rol.html?token='+ $.trim(token)+'');
+    $("a.GestionUsuario").attr("href", 'Usuario.html?token='+ $.trim(token)+'');
+$("a.GestionEspacioFisico").attr("href", 'EspacioFisico.html?token='+$.trim(token)+'');
+     $("a.GestionTipoServicio").attr("href", 'TipoSrvicio.html?token='+ $.trim(token)+'');
+        $("a.GestionEmpleado").attr("href", 'Empleado.html?token='+ $.trim(token)+'');
+     $("a.GestionCargo").attr("href", 'Cargo.html?token='+ $.trim(token)+'');
+       $("a.GestionMotivo").attr("href", 'Motivo.html?token='+ $.trim(token)+'');
+        $("a.GestionPermiso").attr("href", 'Permiso.html?token='+ $.trim(token)+'');
+
+        $("a.RegistrarListadoPolizaLink").attr("href", 'ListadoPolizaPorCliente.html?token='+ $.trim(token)+'');
+    $("a.RegistrarListadoPolizaFechaLink").attr("href", 'ListadoPolizaPorFechas.html?token='+ $.trim(token)+'');
+ 
+        
+        
+        
+    });
+
+
+   
+
+</script>
+ <div class="rowed">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title-menu">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close">
+                            </span> Principal</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table class="table">
+                               
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-inbox"></span><a href="Almacen.html" class="GestionAlmacen">  Gestión de Almacen</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       <span class="glyphicon glyphicon-scissors"></span><a href="Insumo.html"  class="GestionInsumo">  Gestión de Insumo</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class=" 	glyphicon glyphicon-pushpin"></span><a href="Rol.html" class="GestionRol">  Gestión de Rol</a>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-user"></span><a href="Usuario.html" class="GestionUsuario">  Gestión de Usuario</a>
+                                        
+                                    </td>
+                                </tr>
+                                  <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-map-marker"></span><a href="EspacioFisico.html" class="GestionEspacioFisico">Gestión Espacio Fisico</a>
+                                    </td>
+                                </tr>
+                                  <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-trash"></span><a href="TipoServicio.html" class="GestionTipoServicio">Gestión de Tipos de Servicios</a>
+                                    </td>
+                                </tr>
+                                   <tr>
+                                    <td>
+                                       <span class="glyphicon glyphicon-user"></span><a href="Empleado.html" class="GestionEmpleado"> Gestión Empleado</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       <span class="glyphicon glyphicon-briefcase"></span><a href="Cargo.html" class="GestionCargo"> Gestión de Cargo</a>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>
+                                       <span class="glyphicon glyphicon-copy"></span><a href="Motivo.html" class="GestionMotivo"> Gestión de Motivo</a>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>
+                                       <span class="    glyphicon glyphicon-alert"></span><a href="Permiso.html" class="GestionPermiso"> Gestión de Permiso</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title-menu">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th-list">
+                            </span> Reportes</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                         <span class="glyphicon glyphicon-calendar"></span><a href="" class="RegistrarListadoPolizaLink">  Busquedas De Solicitudes Por Fechas</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-user"></span><a href="" class="RegistrarListadoPolizaFechaLink">  Busquedas De Empleados con mas permisos</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-folder-open"></span><a href="" class="RegistrarListadoPolizaOtrosDatosLink">  Busquedas por otros Datos</a>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+         </div>
+    </div>
+</div>
+
+    </div>
+ </div>
+
+ 
+ 
+   
